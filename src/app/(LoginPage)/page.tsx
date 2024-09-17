@@ -1,9 +1,5 @@
-import { Login } from "@/components/widgets/Login/Login";
+import { LoginPage } from "@/components/pages";
 
 export default function Home() {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <Login />
-    </div>
-  );
+  return <LoginPage />;
 }

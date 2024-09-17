@@ -23,7 +23,11 @@ export function LoginForm({ onSubmit }: LoginFormProps) {
     onSubmit(userEmail, userPassword);
   };
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form
+      className="flex justify-center items-center h-screen"
+      action=""
+      onSubmit={handleSubmit}
+    >
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>

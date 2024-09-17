@@ -1,19 +1,38 @@
 "use client";
 
-import { LocalStorageKeys } from "@/constants";
+import { LocalStorageKeys, ROUTES_PATH } from "@/constants";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { useFetchProfile } from "./servise";
+import { useEffect } from "react";
 
 export function MyProfile() {
-  const token = localStorage.getItem(LocalStorageKeys.ACCESS_TOKEN);
   const router = useRouter();
-  if (!token) {
-    router.replace("/");
-  }
+
+  const logOut = () => {
+    localStorage.removeItem(LocalStorageKeys.ACCESS_TOKEN);
+    localStorage.removeItem(LocalStorageKeys.REFRESH_TOKEN);
+    router.replace(ROUTES_PATH.LOGIN);
+  };
+
+  const { data, loading, error } = useFetchProfile();
+
+  useEffect(() => {
+    if (error) {
+      router.replace(ROUTES_PATH.LOGIN);
+    }
+  }, [error, router]);
 
   return (
-    <div>
-      <p>This is a My Info PAGE</p>
-      <p>Token: {token}</p>
-    </div>
+    <>
+      {loading && <p>Loading...</p>}
+      {data && (
+        <div>
+          <p>{data.myProfile.name}</p>
+          <img src={data.myProfile.avatar} alt="avatar" />
+          <Button onClick={logOut}>LogOut</Button>
+        </div>
+      )}
+    </>
   );
 }

@@ -1,12 +1,18 @@
 import { gql } from "@/__generated__/";
 
 const GET_PROFILE = gql(`
-  {
-    myProfile {
-      id
-      name
-      avatar
-    }
+    query MyProfile {
+        myProfile {
+            id
+            email
+            password
+            name
+            role
+            avatar
+            creationAt
+            updatedAt
+
+}
   }
 `);
 

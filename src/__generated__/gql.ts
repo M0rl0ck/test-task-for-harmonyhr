@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "\n  mutation Login($email: String!, $password: String!) {\n    login(email: $email, password: $password) {\n      access_token\n      refresh_token\n    }\n  }\n": types.LoginDocument,
     "\n  mutation RefreshToken($refreshToken: String!) {\n    refreshToken(refreshToken: $refreshToken) {\n      access_token\n      refresh_token\n    }\n  }\n": types.RefreshTokenDocument,
+    "\n    query MyProfile {\n        myProfile {\n            id\n            email\n            password\n            name\n            role\n            avatar\n            creationAt\n            updatedAt\n\n}\n  }\n": types.MyProfileDocument,
 };
 
 /**
@@ -39,6 +40,10 @@ export function gql(source: "\n  mutation Login($email: String!, $password: Stri
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  mutation RefreshToken($refreshToken: String!) {\n    refreshToken(refreshToken: $refreshToken) {\n      access_token\n      refresh_token\n    }\n  }\n"): (typeof documents)["\n  mutation RefreshToken($refreshToken: String!) {\n    refreshToken(refreshToken: $refreshToken) {\n      access_token\n      refresh_token\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n    query MyProfile {\n        myProfile {\n            id\n            email\n            password\n            name\n            role\n            avatar\n            creationAt\n            updatedAt\n\n}\n  }\n"): (typeof documents)["\n    query MyProfile {\n        myProfile {\n            id\n            email\n            password\n            name\n            role\n            avatar\n            creationAt\n            updatedAt\n\n}\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
