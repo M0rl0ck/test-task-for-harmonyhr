@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useFetchProfile } from "./service";
 import { useEffect } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function MyProfile() {
   const router = useRouter();
@@ -29,7 +30,10 @@ export function MyProfile() {
       {data && (
         <div>
           <p>{data.myProfile.name}</p>
-          <img src={data.myProfile.avatar} alt="avatar" />
+          <Avatar className="w-[150px] h-[150px]">
+            <AvatarImage src={data.myProfile.avatar} />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
           <Button onClick={logOut}>LogOut</Button>
         </div>
       )}

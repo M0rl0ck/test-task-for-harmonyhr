@@ -8,9 +8,6 @@ const useLogin = () => {
   const router = useRouter();
   const [login, { error, data }] = useMutation(LOGIN);
   useEffect(() => {
-    if (error) {
-      console.error(error);
-    }
     if (
       data &&
       data.login &&
@@ -28,8 +25,8 @@ const useLogin = () => {
       );
       router.push(ROUTES_PATH.MY_INFO);
     }
-  }, [error, data, router]);
+  }, [data, router]);
 
-  return { login };
+  return { login, error };
 };
 export { useLogin };
