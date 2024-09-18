@@ -1,6 +1,6 @@
 "use client";
 
-import { MyProfile } from "@/components/widgets";
+import { MyProfile } from "@/components/templates";
 import { LocalStorageKeys, ROUTES_PATH } from "@/constants";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

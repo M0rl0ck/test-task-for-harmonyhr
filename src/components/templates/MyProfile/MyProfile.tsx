@@ -3,7 +3,7 @@
 import { LocalStorageKeys, ROUTES_PATH } from "@/constants";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { useFetchProfile } from "./servise";
+import { useFetchProfile } from "./service";
 import { useEffect } from "react";
 
 export function MyProfile() {
