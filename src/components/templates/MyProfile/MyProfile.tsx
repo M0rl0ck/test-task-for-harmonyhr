@@ -6,13 +6,17 @@ import { Button } from "@/components/ui/button";
 import { useFetchProfile } from "./service";
 import { useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useStore } from "@/store";
 
 export function MyProfile() {
   const router = useRouter();
 
+  const { user, setUser, deleteUser } = useStore();
+
   const logOut = () => {
     localStorage.removeItem(LocalStorageKeys.ACCESS_TOKEN);
     localStorage.removeItem(LocalStorageKeys.REFRESH_TOKEN);
+    deleteUser();
     router.replace(ROUTES_PATH.LOGIN);
   };
 
@@ -22,16 +26,19 @@ export function MyProfile() {
     if (error) {
       router.replace(ROUTES_PATH.LOGIN);
     }
-  }, [error, router]);
+    if (data && data.myProfile) {
+      setUser(data.myProfile);
+    }
+  }, [data, error, router, setUser]);
 
   return (
     <>
       {loading && <p>Loading...</p>}
-      {data && (
+      {user && (
         <div>
-          <p>{data.myProfile.name}</p>
+          <p className="capitalize text-xl font-bold">{user.name}</p>
           <Avatar className="w-[150px] h-[150px]">
-            <AvatarImage src={data.myProfile.avatar} />
+            <AvatarImage src={user.avatar} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <Button onClick={logOut}>LogOut</Button>
