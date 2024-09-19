@@ -58,6 +58,15 @@
   }
 }
 
+html {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -1,6 +1,6 @@
 "use client";
 
-import { LoginForm } from "@/components/components/LoginForm/LoginForm";
+import { LoginForm } from "@/components/components";
 import { useLogin } from "./service";
 import { Toaster } from "@/components/ui/toaster";
 
