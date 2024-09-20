@@ -13,7 +13,7 @@ export function LoginPage() {
   useEffect(() => {
     const token = localStorage.getItem(LocalStorageKeys.ACCESS_TOKEN);
     if (!!token) {
-      router.replace(ROUTES_PATH.MY_INFO);
+      router.replace(ROUTES_PATH["My Info"]);
     }
     setToken(!!token);
   }, [router]);

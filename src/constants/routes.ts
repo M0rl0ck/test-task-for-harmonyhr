@@ -1,6 +1,11 @@
-const enum ROUTES_PATH {
-  LOGIN = "/",
-  MY_INFO = "/myInfo",
-}
+const ROUTES_PATH = {
+  LOGIN: "/",
+  Home: "#",
+  "My Info": "/myInfo",
+  People: "#",
+  Hiring: "#",
+  Reports: "#",
+  Files: "#",
+};
 
 export { ROUTES_PATH };

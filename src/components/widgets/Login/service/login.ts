@@ -23,7 +23,7 @@ const useLogin = () => {
         LocalStorageKeys.REFRESH_TOKEN,
         data.login.refresh_token
       );
-      router.push(ROUTES_PATH.MY_INFO);
+      router.push(ROUTES_PATH["My Info"]);
     }
   }, [data, router]);
 
