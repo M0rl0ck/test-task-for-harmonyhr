@@ -1,0 +1,1 @@
+export { MyInfoHeder } from "./MyInfoHeder";

@@ -14,9 +14,9 @@ const navigationItems: NavigationKeys[] = [
 ];
 
 const linkClass =
-  "text-lg hover:bg-sky-600 duration-500 p-4 block rounded-t-[--radius]";
+  "text-lg leading-5 hover:bg-sky-600 duration-500 p-4 block rounded-t-[--radius]";
 
-const activeClass = cn(linkClass, "bg-blue-200");
+const activeClass = cn(linkClass, "bg-bgBlue");
 
 export function Navigation() {
   const pathname = usePathname();
