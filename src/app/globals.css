@@ -33,6 +33,7 @@
     --bgGray: 218 3% 97%;
     --borderButtonPrimary: 210 25% 59%;
     --aside_width: 332px;
+    --aside_small_width: 106px;
     --my_info_content_width: 1047px;
   }
   .dark {
