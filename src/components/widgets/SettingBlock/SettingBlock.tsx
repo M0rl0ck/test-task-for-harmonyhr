@@ -1,6 +1,7 @@
 import { Settings, CircleHelp, Bell } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useStore } from "@/store";
+import { NavigationMobile } from "./NavigationMobile";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,9 +17,15 @@ export function SettingBlock() {
   const { logOut } = useLogout();
   return (
     <div className="flex items-center gap-5">
-      <Settings className="w-6 h-6" />
-      <CircleHelp className="w-6 h-6" />
-      <Bell className="w-6 h-6" />
+      <div className="flex items-center gap-5 max-lg:hidden">
+        <Settings className="w-6 h-6" />
+        <CircleHelp className="w-6 h-6" />
+        <Bell className="w-6 h-6" />
+      </div>
+
+      <div className="lg:hidden">
+        <NavigationMobile />
+      </div>
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

@@ -8,4 +8,14 @@ const ROUTES_PATH = {
   Files: "#",
 };
 
-export { ROUTES_PATH };
+type NavigationKeys = keyof typeof ROUTES_PATH;
+const NAVIGATION_ITEMS: NavigationKeys[] = [
+  "Home",
+  "My Info",
+  "People",
+  "Hiring",
+  "Reports",
+  "Files",
+];
+
+export { ROUTES_PATH, NAVIGATION_ITEMS };
