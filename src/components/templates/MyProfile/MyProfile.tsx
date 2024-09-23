@@ -15,7 +15,7 @@ export function MyProfile() {
       {user && (
         <>
           <MyInfoHeder user={user} />
-          <div className="flex">
+          <div className="flex pb-72 max-md:pb-0">
             <MyInfoDetails user={user} />
             <MyInfoContent />
           </div>
