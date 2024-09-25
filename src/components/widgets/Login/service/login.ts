@@ -1,5 +1,5 @@
 import { LOGIN } from "@/apollo";
-import { LocalStorageKeys, ROUTES_PATH } from "@/constants";
+import { LocalStorageKeys, MY_INFO_ROUTES } from "@/constants";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -23,7 +23,7 @@ const useLogin = () => {
         LocalStorageKeys.REFRESH_TOKEN,
         data.login.refresh_token
       );
-      router.push(ROUTES_PATH["My Info"]);
+      router.push(MY_INFO_ROUTES["Time of"]);
     }
   }, [data, router]);
 

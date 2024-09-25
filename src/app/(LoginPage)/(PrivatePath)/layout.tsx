@@ -1,14 +1,19 @@
 "use client";
 
-import { MyProfile } from "@/components/templates";
 import { RootContainer } from "@/components/components";
 import { Header } from "@/components/templates";
 
-export function MyProfilePage() {
+// import { useState } from "react";
+
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <RootContainer>
-      <Header />
-      <MyProfile />
+      {<Header />}
+      {children}
     </RootContainer>
   );
 }

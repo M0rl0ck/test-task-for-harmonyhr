@@ -1,7 +1,7 @@
 "use client";
 
 import { Login } from "@/components/widgets";
-import { LocalStorageKeys, ROUTES_PATH } from "@/constants";
+import { LocalStorageKeys, MY_INFO_ROUTES } from "@/constants";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ export function LoginPage() {
   useEffect(() => {
     const token = localStorage.getItem(LocalStorageKeys.ACCESS_TOKEN);
     if (!!token) {
-      router.replace(ROUTES_PATH["My Info"]);
+      router.replace(MY_INFO_ROUTES["Time of"]);
     }
     setToken(!!token);
   }, [router]);

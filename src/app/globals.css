@@ -32,9 +32,11 @@
     --bgBlue: 210 48% 90%;
     --bgGray: 218 36% 96%;
     --borderButtonPrimary: 210 25% 59%;
-    --aside_width: 332px;
+    --aside-width: 332px;
     --aside_small_width: 106px;
     --my_info_content_width: 1047px;
+    --my-info-content-header-h: 49px;
+    --my_info_content_header_w: 1046px;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -71,6 +73,27 @@ html {
 
 body {
   height: 100%;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    height: 5px;
+    display: none;
+  }
+
+  .scrollbar:hover::-webkit-scrollbar {
+    height: 5px;
+    display: block;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #adadbd;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #3f3f82;
+    border-radius: 4px;
+  }
 }
 
 @layer base {

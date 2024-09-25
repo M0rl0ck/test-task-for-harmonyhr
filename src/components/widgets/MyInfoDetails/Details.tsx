@@ -11,7 +11,7 @@ interface Props {
 
 export function MyInfoDetails({ user }: Props) {
   return (
-    <div className="flex flex-col mt-[-150px] items-center w-[--aside_width] max-md:w-[--aside_small_width] pl-[72px] max-md:pl-6 max-md:absolute">
+    <div className="flex flex-col mt-[-150px] items-center w-[--aside-width] max-md:w-[--aside_small_width] pl-[72px] max-md:pl-6 max-md:absolute">
       <Avatar className="w-[150px] h-[150px] max-md:w-[60px] max-md:h-[60px]">
         <AvatarImage src={user.avatar} />
         <AvatarFallback>CN</AvatarFallback>

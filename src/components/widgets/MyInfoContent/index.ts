@@ -1,1 +1,1 @@
-export { MyInfoContent } from "./MyInfoContent";
+export { MyInfoContentTimeOf } from "./MyInfoContentTimeOf";
