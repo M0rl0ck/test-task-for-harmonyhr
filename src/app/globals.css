@@ -32,11 +32,13 @@
     --bgBlue: 210 48% 90%;
     --bgGray: 218 36% 96%;
     --borderButtonPrimary: 210 25% 59%;
+    --cardBg: 240 50% 99%;
+    --dividerColor: 211 25% 59%;
     --aside-width: 332px;
     --aside_small_width: 106px;
-    --my_info_content_width: 1047px;
-    --my-info-content-header-h: 49px;
-    --my_info_content_header_w: 1046px;
+    --my_info_content_width: 1046px;
+    --my-info-content-nav-h: 49px;
+    --my_info_content_nav_w: 1046px;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -73,6 +75,7 @@ html {
 
 body {
   height: 100%;
+  font-weight: 500;
 }
 
 @layer utilities {

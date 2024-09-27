@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
 const linkClass =
-  "flex justify-center items-center text-sm text-nowrap leading-4 hover:bg-sky-600 duration-500 w-[90px] h-[49px] rounded-t-[--radius]";
+  "flex justify-center items-center text-sm text-nowrap leading-4 hover:bg-sky-600 duration-500 w-[90px] h-[49px] rounded-t-xl";
 
-const activeLinkClass = cn(linkClass, "bg-bgGray");
+const activeLinkClass = cn(linkClass, "bg-cardBg");
 
 export function MyInfoNavigation() {
   const pathname = usePathname();
   return (
-    <nav className="overflow-x-auto mb-[5px] max-[1320px]:hover:mb-0 scrollbar w-full max-w-[1046px]">
+    <nav className="overflow-x-auto mb-[5px] max-[1320px]:hover:mb-0 scrollbar w-full max-w-[1046px] bg-bgBlue">
       <ul className="w-[1046px]  flex justify-between gap-4">
         {MY_INFO_NAVIGATION_ITEMS.map((item) => (
           <li key={item}>

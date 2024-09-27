@@ -6,7 +6,7 @@ export function MyInfoCard({
   children: React.ReactNode;
 }>) {
   return (
-    <Card className="w-full pt-6">
+    <Card className="w-full pt-6 bg-cardBg">
       <CardContent className="text-sm font-medium">{children}</CardContent>
     </Card>
   );

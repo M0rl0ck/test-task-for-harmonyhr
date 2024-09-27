@@ -14,6 +14,8 @@ const config: Config = {
         bgBlue: "hsl(var(--bgBlue))",
         bgGray: "hsl(var(--bgGray))",
         borderButtonPrimary: "hsl(var(--borderButtonPrimary))",
+        cardBg: "hsl(var(--cardBg))",
+        dividerColor: "hsl(var(--dividerColor))",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
